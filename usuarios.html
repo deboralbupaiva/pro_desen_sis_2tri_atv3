@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Estoque</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>ID</th>
+                <th>Matrícula</th>
+                <th>Função</th>
+            </tr>
+        </thead>
+        <tbody id="tabela-usuarios"></tbody>
+    </table>
+
+    <script>
+        fetch('listar_usuarios.php')
+        .then(res => res.json())
+        .then(produtos => {
+            const tabela = document.getElementById('tabela-usuarios');
+            usuarios.forEach(u =>{
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                <td>${u.nome}</td>
+                <td>${u.quantidade}</td>
+                <td>${parseFloat(u.preco).toFixed(2)}</td>
+                `;
+                tabela.appendChild(linha);
+            });
+        })
+        .catch(err =>{
+            console.error('Erro ao carregar usuarios', err);
+        });
+    </script>
+    
+    <a href="cadastra_usuarios.html" class="link-basico">Cadastrar Usuario</a>
+</body>
+</html>

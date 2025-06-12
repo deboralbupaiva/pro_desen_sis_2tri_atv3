@@ -7,8 +7,7 @@ $conn = new mysqli ("localhost","root","","panificadora");
 if($conn->connect_error) {
     die(json_encode(["erro" => "Erro ao conectar"]));
 }
-
-//Cosulta SQL
+L
 $sql = "SELECT id, nome, matricula, funcao FROM usuarios";
 $resultado = $conn -> query($sql);
 

@@ -29,8 +29,8 @@
                 const linha = document.createElement('tr');
                 linha.innerHTML = `
                 <td>${u.nome}</td>
-                <td>${u.quantidade}</td>
-                <td>${parseFloat(u.preco).toFixed(2)}</td>
+                <td>${u.matricula}</td>
+                <td>${u.funcao}</td>
                 `;
                 tabela.appendChild(linha);
             });
@@ -40,6 +40,6 @@
         });
     </script>
     
-    <a href="cadastra_usuarios.html" class="link-basico">Cadastrar Usuario</a>
+    <a href="cadastra_usuarios.html" class="link-basico">Cadastrar Usuário</a>
 </body>
 </html>
